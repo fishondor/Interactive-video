@@ -1,0 +1,7 @@
+const VIDEO_START_TRACKING_URL = 'http://www.mocky.io/v2/5be098b232000072006496f5';
+const VIDEO_ENDED_TRACKING_URL = 'http://www.mocky.io/v2/5be098d03200004d006496f6';
+
+export {
+    VIDEO_START_TRACKING_URL,
+    VIDEO_ENDED_TRACKING_URL
+}
