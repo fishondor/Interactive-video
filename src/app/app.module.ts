@@ -26,7 +26,8 @@ import { TrackingPixelComponent } from './components/tracking-pixel/tracking-pix
   ],
   providers: [],
   entryComponents: [
-    ActionButtonComponent
+    ActionButtonComponent,
+    TrackingPixelComponent
   ],
   bootstrap: [AppComponent]
 })

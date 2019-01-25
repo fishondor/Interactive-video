@@ -1,15 +1,12 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, ViewContainerRef, Inject } from '@angular/core';
 
 import { AddsService } from '../../providers/adds.service';
 import { DeviceService } from '../../providers/device.service';
+import { AnalyticsService } from '../../providers/analytics.service';
 import { 
   SOUND_ON,
   SOUND_OFF 
 } from '../../globals/icons';
-import {
-  VIDEO_START_TRACKING_URL,
-  VIDEO_ENDED_TRACKING_URL
-} from '../../globals/endpoints';
 
 import { Ad } from '../../models/ad';
 import { Action } from '../../models/action';
@@ -38,14 +35,16 @@ export class VideoAdComponent implements AfterViewInit {
   public videoSrc: string;
 
   private soundOn: boolean = false;
-  public eventTrackingUrl: string = '';
 
   get iconSound(){
     return this.soundOn ? SOUND_ON : SOUND_OFF;
   }
 
   constructor(private addsService: AddsService,
-              private deviceService: DeviceService){
+              private deviceService: DeviceService,
+              private analyticsService: AnalyticsService,
+              @Inject(ViewContainerRef) viewContainerRef){
+    analyticsService.setRootViewContainerRef(viewContainerRef);
   }
 
   ngAfterViewInit(){
@@ -125,11 +124,11 @@ export class VideoAdComponent implements AfterViewInit {
   }
 
   trackPlayig(){
-    this.eventTrackingUrl = VIDEO_START_TRACKING_URL;
+    this.analyticsService.trackEvent(AnalyticsService.ANALYTICS_EVENTS.VIDEO_STARTED);
   }
 
   trackEnded(){
-    this.eventTrackingUrl = VIDEO_ENDED_TRACKING_URL;
+    this.analyticsService.trackEvent(AnalyticsService.ANALYTICS_EVENTS.VIDEO_ENDED);
   }
 
 }
