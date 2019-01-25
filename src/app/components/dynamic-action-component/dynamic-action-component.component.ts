@@ -3,7 +3,8 @@ import { Component, Input, OnDestroy,
   ViewContainerRef, 
   ComponentFactoryResolver, 
   ComponentFactory,
-ComponentRef } from '@angular/core';
+  ComponentRef 
+} from '@angular/core';
 
 import { ActionButtonComponent } from '../action-button/action-button.component';
 
