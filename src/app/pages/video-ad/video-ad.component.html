@@ -1,0 +1,19 @@
+<div [ngClass]="{'main-container': true, 'visible': isReady}">
+  <div class="video-container">
+      <video #videoPlayer 
+        [autoplay]="true" 
+        [muted]="!soundOn"
+        (playing)="trackPlayig()"
+        (ended)="trackEnded()">
+        <source type="video/mp4" [src]="videoSrc">
+      </video>
+      <app-dynamic-action-component #actionComponent
+        [type]="actionType"
+        [ngClass]="[actionClass, actionActive ? 'action' : '']"></app-dynamic-action-component>
+      <app-icon-button 
+        [ngClass]="'button-sound'" 
+        (onClick)="toggleSound()" 
+        [icon]="iconSound"></app-icon-button>
+  </div>
+</div>
+<app-tracking-pixel [trackingUrl]="eventTrackingUrl"></app-tracking-pixel>
