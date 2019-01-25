@@ -1,0 +1,13 @@
+$button-size: 24px;
+.button-icon{
+    border: none;
+    background-color: transparent;
+    width: $button-size;
+    height: $button-size;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0;
+    &:focus{
+        outline: none;
+    }
+}
