@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display video element in root route', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to video-ad!');
+    expect(page.getVideoElement()).toBeTruthy();
   });
 
   afterEach(async () => {
