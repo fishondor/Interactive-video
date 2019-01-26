@@ -34,7 +34,7 @@ export class VideoAdComponent implements AfterViewInit {
   public actionClass: string = 'bottom center';
   public videoSrc: string;
 
-  private soundOn: boolean = false;
+  public soundOn: boolean = false;
 
   get iconSound(){
     return this.soundOn ? SOUND_ON : SOUND_OFF;
