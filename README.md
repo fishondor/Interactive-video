@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Clone this repository
 2. `npm install`
 3. `npm run example-app`
-4. App will be served in localhost://8080
+4. App will be served in [http://localhost:8080/](http://localhost:8080/)
 
 ## Development server - will require angular-cli (V7.2.2) installed globaly
 
